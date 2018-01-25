@@ -2,8 +2,10 @@
   "name": "csv-gen",
   "version": "0.0.1",
   "dependencies": {},
+  "types": "./dist/CSV.d.ts",
+  "main": "./dist/CSV.min.js",
   "scripts": {
-    "build": "tsc -p ./ && babel ./dist/CSV.js -o ./dist/CSV.min.js"
+    "build": "rm -rf ./dist && tsc -p ./ && babel ./dist/CSV.js -o ./dist/CSV.min.js"
   },
   "devDependencies": {
     "@types/node": "^9.3.0",
