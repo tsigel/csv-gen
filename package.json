@@ -5,7 +5,8 @@
   "types": "./dist/CSV.d.ts",
   "main": "./dist/CSV.min.js",
   "scripts": {
-    "build": "rm -rf ./dist && tsc -p ./ && babel ./dist/CSV.js -o ./dist/CSV.min.js"
+    "build": "rm -rf ./dist && tsc -p ./ && babel ./dist/CSV.js -o ./dist/CSV.min.js",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^9.3.0",
