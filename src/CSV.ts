@@ -45,6 +45,7 @@ export function download(csv: string, name: string): void {
     const link = document.createElement('a');
     link.setAttribute('href', content);
     link.setAttribute('download', name);
+    link.click();
 }
 
 function escape(text: any) {
