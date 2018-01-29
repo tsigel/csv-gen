@@ -49,5 +49,5 @@ export function download(csv: string, name: string): void {
 }
 
 function escape(text: any) {
-    return `"${String(text)}"`;
+    return `"${String(text).replace(/"/g, '""')}"`;
 }
