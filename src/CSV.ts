@@ -40,11 +40,15 @@ export function generate(data: IGenerateData): string {
     return csv;
 }
 
-export function download(csv: string, name: string): void {
+export function download(csv: string, name: string, attrs: IHash<string> = Object.create(null)): void {
     const content = encodeURI(`data:text/csv;charset=utf-8,${csv}`);
     const link = document.createElement('a');
     link.setAttribute('href', content);
     link.setAttribute('download', name);
+    Object.keys(attrs).forEach((name) => {
+        const value = attrs[name];
+        link.setAttribute(name, value);
+    });
     link.click();
 }
 
