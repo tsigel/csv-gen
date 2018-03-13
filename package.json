@@ -1,6 +1,6 @@
 {
   "name": "csv-gen",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "dependencies": {},
   "types": "./dist/CSV.d.ts",
   "main": "./dist/CSV.min.js",
