@@ -49,9 +49,23 @@ export function download(csv: string, name: string, attrs: IHash<string> = Objec
         const value = attrs[name];
         link.setAttribute(name, value);
     });
+    link.style.position = 'absolute';
+    link.style.opacity = '0';
+    document.body.appendChild(link);
     link.click();
+    frame(() => {
+        document.body.removeChild(link);
+    });
 }
 
 function escape(text: any) {
     return `"${String(text).replace(/"/g, '""')}"`;
+}
+
+function frame(cb: Function) {
+    if (window.requestAnimationFrame) {
+        window.requestAnimationFrame(cb as any);
+    } else {
+        setTimeout(cb, 1000 / 24);
+    }
 }
